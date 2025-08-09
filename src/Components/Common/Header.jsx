@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="flex justify-between items-center px-6 py-4 bg-slate-300">
+      <nav className="flex justify-between items-center px-6 py-4 bg-black bg-opacity-50 backdrop-blur-md text-white">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setOpen(!open)}
