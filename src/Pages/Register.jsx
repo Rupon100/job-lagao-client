@@ -3,7 +3,6 @@ import registerAnimation from "../../public/Login.json";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvider/AuthProvider";
-import { auth } from '../Firebase/firebase.init'
 
 const Register = () => {
 
