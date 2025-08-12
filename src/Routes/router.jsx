@@ -8,6 +8,8 @@ import Jobs from '../Pages/Jobs'
 import CareerAdvice from '../Pages/CareerAdvice'
 import PrivateRoute from '../Components/Common/PrivateRoute'
 import JobDetails from '../Pages/JobDetails'
+import CandidateLayout from '../Components/Layout/CandidateLayout'
+import Applications from '../Pages/Applications'
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -38,6 +40,16 @@ export const router = createBrowserRouter([
             {
                 path: 'career',
                 element: <PrivateRoute><CareerAdvice></CareerAdvice></PrivateRoute>
+            },
+            {
+                path: '/dashboard',
+                element: <PrivateRoute><CandidateLayout></CandidateLayout></PrivateRoute>,
+                children: [
+                    {
+                        path: '/dashboard/applications',
+                        element: <PrivateRoute><Applications></Applications></PrivateRoute>
+                    }
+                ]
             }
         ]
     }

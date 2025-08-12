@@ -4,6 +4,7 @@ import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
+import Dashboard from "../../Pages/Dashboard";
 
 const Header = () => {
   const { loading, user, logOut } = useContext(AuthContext);
@@ -47,12 +48,18 @@ const Header = () => {
           <Link className="link" to={"/career"}>
             Career Advice
           </Link>
+          <Link className="link" to={"/dashboard/applications"}>
+            Dashboard
+          </Link>
         </div>
         <div className="flex items-center gap-4">
           {
             loading ? (<p className="btn shadow" >Loading..</p>) 
             : user ? (
+              <div>
+                 
             <button onClick={handleLogOut} className="btn shadow" >LogOut</button>
+              </div>
           ) : (
             <Link to={"login"}>
               <button className="px-4 py-2 border border-gray-400 rounded btn">

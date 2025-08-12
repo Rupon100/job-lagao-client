@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../Components/Common/Loading";
-import useAuth from "../Auth/ContextAuth/useAuth";
+import JobApplyForm from "./JobApplyForm";
 
 const JobDetails = () => {
   const params = useParams();
@@ -22,8 +22,8 @@ const JobDetails = () => {
     return <Loading></Loading>;
   }
 
-  console.log(params);
-  console.log(details);
+  // console.log(params);
+  // console.log(details);
 
   const {
     _id,
@@ -123,30 +123,8 @@ const JobDetails = () => {
         </div>
 
         {/* Apply Job Form (Blank for now) */}
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Apply for this Job</h2>
-          <form className="space-y-4 border rounded p-6 shadow-md">
-            {/* You can add form inputs here later */}
-            <p className="text-gray-500 italic">
-              Application form will go here.  when job apply is done then refetch this page
-            </p>
-            <p>
-                make a different form or do here || take file for resume and CV or link of docs of cv and gt linkedin profile
-            </p>
-            <p>make recruiter layout where he can see how much applications done and in every job post show how many people apply || set a condition one user just apply once in a job</p>
-            <p>set. a condition deadline miss can cannot apply anyone</p>
-            <p>below the details show most recent similar type job</p>
-            <p>show count how many jobs nad user and recruiter and how many people hired</p>
-            <p>how many people hired get this information from the recruiter confiration</p>
-            <p>every user can visit recruiter profile and can see information</p>
-            <button
-              type="submit"
-              disabled
-              className="btn btn-primary opacity-50 cursor-not-allowed"
-            >
-              Submit Application
-            </button>
-          </form>
+        <div className="bg-slate-100 p-4 rounded" >
+          <JobApplyForm id={_id} ></JobApplyForm>
         </div>
       </div>
     </div>
